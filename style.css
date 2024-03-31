@@ -1,0 +1,64 @@
+
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+:root {
+    --sizing: 700px
+}
+
+.game {
+    background-color: #f6f6f6;
+
+  border: 1px black solid;
+  border-radius: 25px;
+  margin: 2rem 1rem;
+ 
+  width: var(--sizing);
+  text-align: center;
+  padding: 2rem;
+  height: 250px;
+  
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+}
+#title {font-size: 3rem; text-align: center;   font-family: "Protest Strike", sans-serif; color: #3a3a3a; }
+
+.score {
+  background-color: #e2e2e2;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px black solid;
+  border-radius: 1rem;
+  width: var(--sizing);
+}
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+img:hover {
+  
+  transition: ease-in-out;
+
+  transform: scale(1.15);
+}
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap')

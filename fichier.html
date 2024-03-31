@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Strike&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<script>
+
+function loadedstart() {
+var dv = document.getElementById("aidiv")
+
+ 
+    var aimg = document.createElement("img")
+    aimg.id = "idi"
+    aimg.src = "images/thumbs.png"
+    aimg.width = 175
+    dv.appendChild(aimg)
+
+    var result = "DRAW"
+
+    confetti.particleSpeed = 2;
+    var points = 0
+    }
+
+
+function play(player_move) { 
+    removeConfetti();
+/*---------------------------------------------*/
+/*             AI TURN                         */
+/*---------------------------------------------*/
+
+    var choices = ["rock", "paper", "scissor"]
+    var indexran = Math.floor(Math.random() * 3)
+    var ai_choice = choices[indexran]
+
+/*---------------------------------------------*/
+/*             VISUALS                         */
+/*---------------------------------------------*/
+
+var dv = document.getElementById("aidiv")
+
+if (ai_choice == "rock") {
+
+    var lastelm = document.getElementById("idi")
+    lastelm.remove()
+
+    var aimg = document.createElement("img")
+
+    aimg.id = "idi"
+
+    aimg.src = "images/WhatsApp Image 2024-02-10 at 2.40.37 PM(1).jpeg"
+    aimg.width = 125
+    dv.appendChild(aimg)
+
+}
+else if (ai_choice == "paper") {
+    var lastelm = document.getElementById("idi")
+    lastelm.remove()
+
+    var aimg = document.createElement("img")
+    aimg.id = "idi"
+
+    aimg.src = "images/WhatsApp Image 2024-02-10 at 2.40.37 PM(2).jpeg"
+    aimg.width = 175
+    dv.appendChild(aimg)
+
+}
+else if (ai_choice == "scissor") {
+
+    var lastelm = document.getElementById("idi")
+    lastelm.remove()
+
+    var aimg = document.createElement("img")
+    aimg.id = "idi"
+
+
+    aimg.src = "images/WhatsApp Image 2024-02-10 at 2.40.37 PM.jpeg"
+    aimg.width = 175
+    dv.appendChild(aimg)
+
+}
+
+/*---------------------------------------------*/
+/*        RESULTS COMPARE                      */
+/*---------------------------------------------*/
+
+
+    /* DRAW */
+    if (player_move == ai_choice) {result = "draw"}
+    /* CASES */
+
+    else if (player_move == "rock") {if (ai_choice == "scissor") {result = "WIN"} 
+    else {result = "LOSS"}}
+    
+    else if (player_move == "paper") {if (ai_choice == "rock") {result = "WIN"} 
+    else {result = "LOSS"}}
+
+    else if (player_move == "scissor") {if (ai_choice == "paper") {result = "WIN"} 
+    else {result = "LOSS"}}
+
+/*---------------------------------------------*/
+/*            SCORE SYSTEM                     */
+/*---------------------------------------------*/
+var score = document.getElementById("score")
+var divscore = document.getElementById("divscore")
+if (result == "WIN") {
+    score.textContent  = "PLAYER WIN"
+    score.textContent  = "PLAYER WIN   "
+    divscore.style.backgroundColor = "#9fffb6"
+
+    toggleConfetti();}
+
+if (result == "LOSS") {
+
+    score.textContent  = "PLAYER LOSE   "
+    divscore.style.backgroundColor = "#ff9f9f"}
+
+if (result == "draw") {
+    score.textContent  = "DRAW   "
+    divscore.style.backgroundColor = "#e2e2e2"}
+
+
+} 
+
+
+</script>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<script src="confetti.js"></script>
+
+</head>
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<body onload="loadedstart()">
+
+    <video autoplay muted loop id="myVideo">
+        <source src="images/wave-of-elastic-shapes-2024-02-01-16-43-50-utc(1).mp4" type="video/mp4">
+      </video>
+
+      
+<form name="f">
+    <h1 id="title"> ROCK, PAPER, SCISSORS.</h1>
+<div class="game">
+    <h2> PLAYER:</h2>
+        <div class="container">
+    <a href="#" onclick="play('rock')">
+        <img src="images/WhatsApp Image 2024-02-10 at 2.40.37 PM(1).jpeg" width="125">
+    </a>
+    
+    <a href="#" onclick="play('paper')">
+        <img src="images/WhatsApp Image 2024-02-10 at 2.40.37 PM(2).jpeg" width="175">
+
+    </a>
+    
+    <a href="#" onclick="play('scissor')">
+        <img src="images/WhatsApp Image 2024-02-10 at 2.40.37 PM.jpeg" width="175">
+
+    </a>
+</div>
+</div>
+<div class="container">
+<div class="score" id="divscore">
+    <p id="score" >RESULTS</p></div>
+</div>
+<div class="game" id="aidiv">
+    <h2> COMPUTER:</h2>
+
+
+</div>
+
+</form>
+</body>
+</html>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
